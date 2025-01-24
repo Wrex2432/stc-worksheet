@@ -11,7 +11,6 @@ export async function addTask(formData:FormData){
         body: JSON.stringify({task})
     });
     revalidatePath("/activity/a5");
-    
 }
 
 export async function removeTask(id:any) {
