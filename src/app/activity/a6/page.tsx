@@ -3,6 +3,13 @@ import Link from "next/link";
 import "./a6.css";
 import { useState, useEffect } from "react";
 
+interface FlavorTextEntry {
+    language: {
+      name: string;
+    };
+    flavor_text: string;
+}
+
 type dataCard = {
     name:string,
     image:string,
@@ -28,7 +35,7 @@ export default function Activity5() {
                 const speciesResponse = await fetch(pokemonData.species.url);
                 const speciesData = await speciesResponse.json();
 
-                const description = speciesData.flavor_text_entries.find((entry:any) => entry.language.name === "en"
+                const description = speciesData.flavor_text_entries.find((entry:FlavorTextEntry) => entry.language.name === "en"
                 )?.flavor_text || "No description available.";
 
                 const imageUrl = pokemonData.sprites.front_default || "/default-image.png";
