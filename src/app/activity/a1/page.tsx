@@ -23,7 +23,7 @@ export default function Activity1() {
                     </a>
                     <button onClick={()=> triggerCrosshair()} 
                         className='a1-button button-style'>
-                            <i className='bx bx-target-lock'></i>
+                            <i className='bx bx-target-lock'> </i>
                     </button>
                 </div>
             </div>
