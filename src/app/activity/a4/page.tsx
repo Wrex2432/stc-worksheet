@@ -4,7 +4,6 @@ import "./a4.css";
 import Link from "next/link";
 
 export default function Activity4() {
-    const [isClicked, setIsClicked] = useState<boolean>(false);
     const [color, setColor] = useState<string>('#fff');
     const [scale, setScale] = useState<number>(1);
     const [randomNum, setRandomNum] = useState<number>(0.2);
@@ -15,13 +14,11 @@ export default function Activity4() {
         const newColor = '#' + Math.floor(randomNum * 16777215).toString(16);
         setScale(newScale);
         setColor(newColor);
-        setIsClicked(prevState => !prevState);
     };
 
     const handleReset = (): void => {
         setScale(1);
         setColor('#fff');
-        setIsClicked(false);
     };
 
     return (
@@ -41,7 +38,7 @@ export default function Activity4() {
             transform: `scale(${scale})`,
             transition: 'transform 0.3s ease',
             background: color,
-            }}
+        }}
         >
             <span
             style={{

@@ -9,9 +9,9 @@ export default function Activity3() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const inputValue = e.target.value;
-    const parsedValue = inputValue === "" ? "" : parseInt(inputValue);
+    const parsedValue = parseInt(inputValue);
 
-    if (parseInt(parsedValue) <= 99 || inputValue === "") {
+    if (parsedValue <= 99 || inputValue === "") {
       if (e.target.id === "val1") {
         setValue1(parsedValue);
       } else {

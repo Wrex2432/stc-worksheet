@@ -28,8 +28,7 @@ export default function Activity5() {
                 const speciesResponse = await fetch(pokemonData.species.url);
                 const speciesData = await speciesResponse.json();
 
-                const description = speciesData.flavor_text_entries.find(
-                (entry: any) => entry.language.name === "en"
+                const description = speciesData.flavor_text_entries.find((entry:any) => entry.language.name === "en"
                 )?.flavor_text || "No description available.";
 
                 const imageUrl = pokemonData.sprites.front_default || "/default-image.png";
@@ -42,7 +41,7 @@ export default function Activity5() {
             }));
                 setPokemons(pokemonDetails);
             } catch (err) {
-                setError("Failed to fetch Pokémon data.");
+                setError(`Failed to fetch Pokémon data:${err}`);
             } finally {
                 setLoading(false);
             }
