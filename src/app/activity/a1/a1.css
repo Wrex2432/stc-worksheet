@@ -1,0 +1,79 @@
+.a1-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.center-world {
+    position: relative;
+    --b: 2.5px;   /* border thickness */
+    --s: .85em; /* size of the corner */
+    --color: #36395A;
+    
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    
+}
+
+span {
+    display: block;
+    padding: 3em;
+    font-size: 2rem;
+    background-color: #FCFCFD;
+    color: #222222;
+}
+
+i{
+    font-size: 3rem;
+}
+
+.crosshair {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+.hidden {
+    display: none;
+}
+.xline{
+    position: fixed;
+    width: 100vw;
+    height: 1px;
+    border: 2px solid blue;
+}
+.yline{
+    position: fixed;
+    width: 1px;
+    height: 100vh;
+    border: 2px solid blue;
+}
+
+.a1-buttons{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 35px;
+
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.a1-button {
+    width: 50px;    
+
+}
+

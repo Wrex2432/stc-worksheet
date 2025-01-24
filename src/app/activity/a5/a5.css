@@ -1,0 +1,46 @@
+.a5-main{
+    overflow-y: scroll;
+    border: 2px solid limegreen;
+    font-size: 1.3rem;
+    padding: 20px 4em 20px 4em;
+    height: 550px;
+}
+
+.a5-button{
+    width: 50px;
+}
+i{
+    font-size: 3rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+}
+form div {
+    border: 2px solid rgb(128, 0, 11);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.5em;
+}
+
+input[type="checkbox"] {
+    text-align: center;
+    width: clamp(48px,48px,2.5rem);
+    height: clamp(48px,48px,2.5rem);
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+input[type="checkbox"]:focus + label {
+    text-decoration: underline;
+}
+
+input[type="text"] {
+    border: 2px solid #000;
+}
+
+

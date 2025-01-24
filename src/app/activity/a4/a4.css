@@ -1,0 +1,74 @@
+.a4-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+    --b: 2.5px;   /* border thickness */
+    --s: .85em; /* size of the corner */
+    --color: #36395A;
+    
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+}
+.center-world {
+    
+    --b: 2.5px;   /* border thickness */
+    --s: .85em; /* size of the corner */
+    --color: #36395A;
+    
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+        var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    
+}
+
+
+i{
+    font-size: 3rem;
+}
+
+
+.a4-button {
+    display: inline-block;
+    height: 38px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 4px 24px;
+    border-radius: 50px;
+    background-image: linear-gradient(180deg,#fff,#f5f5fa);
+
+    box-shadow: 
+        0 4px 11px 0 rgb(37 44 97 / 15%), 
+        0 1px 3px 0 rgb(93 100 148 / 20%);
+    :hover{
+        box-shadow: 0 8px 22px 0 rgb(37 44 97 / 15%), 0 4px 6px 0 rgb(93 100 148 / 20%);
+    }
+}
+
+.a4-buttons{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.a4-buttons button, .a4-buttons a {
+    width: 50px;
+    z-index: 10;
+
+}
