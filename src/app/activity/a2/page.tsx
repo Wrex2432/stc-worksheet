@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import "./a2.css";
 export default function Activity2() {
   const [value, setValue]:any = useState("");
@@ -55,10 +56,10 @@ export default function Activity2() {
           </main>
   
           <footer>
-            <a href="/" 
+            <Link href="/" 
               className='a2-button button-style'>
                   <i className='bx bx-home'></i>
-            </a>
+            </Link>
           </footer>
   
         </div>

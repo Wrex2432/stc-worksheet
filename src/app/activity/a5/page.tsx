@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link";
 import "./a5.css";
 import {addTask, removeTask} from "./action";
 import { useState, useEffect } from "react";
@@ -62,10 +63,10 @@ export default function Activity5() {
             </main>
     
             <footer>
-                <a href="/" 
+                <Link href="/" 
                 className='a5-button button-style'>
                     <i className='bx bx-home'></i>
-                </a>
+                </Link>
             </footer>
     
             </div>

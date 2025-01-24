@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import "./a3.css";
+import Link from "next/link";
 export default function Activity3() {
   const [value1, setValue1] = useState("");
   const [value2, setValue2] = useState("");
@@ -44,10 +45,10 @@ export default function Activity3() {
           </main>
   
           <footer>
-            <a href="/" 
+            <Link href="/" 
               className='a3-button button-style'>
                   <i className='bx bx-home'></i>
-            </a>
+            </Link>
             <button onClick={()=>handleReset()} className="button-style"><i className='bx bx-reset' ></i></button>
           </footer>
   

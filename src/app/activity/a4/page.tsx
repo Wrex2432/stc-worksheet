@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import "./a4.css";
+import Link from "next/link";
 
 export default function Activity4() {
     const [isClicked, setIsClicked] = useState(false);
@@ -27,10 +28,10 @@ export default function Activity4() {
     return (
         <div className="a4-container">
             <div className="a4-buttons">
-                <a href="/" 
+                <Link href="/" 
                     className='button-style'>
                         <i className='bx bx-home'></i>
-                </a>
+                </Link>
                 <button onClick={handleReset} className="button-style">
                     <i className='bx bx-reset' ></i>
                 </button>

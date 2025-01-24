@@ -1,5 +1,6 @@
 "use client";
 import "./a1.css";
+import Link from "next/link";
 
 export default function Activity1() {
 
@@ -17,10 +18,10 @@ export default function Activity1() {
                 <span>Hello World</span>
                 
                 <div className="a1-buttons">
-                    <a href="/" 
+                    <Link href="/" 
                         className='a1-button button-style'>
                             <i className='bx bx-home'></i>
-                    </a>
+                    </Link>
                     <button onClick={()=> triggerCrosshair()} 
                         className='a1-button button-style'>
                             <i className='bx bx-target-lock'> </i>
