@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import "./a3.css";
-import Link from "next/link";
 import { Filler } from "@/app/component/filler";
 import { Header } from "@/app/component/header";
 import { Footer } from "@/app/component/footer";

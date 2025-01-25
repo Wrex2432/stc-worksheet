@@ -1,5 +1,4 @@
 "use client"
-import Link from "next/link";
 import "./a6.css";
 import { useState, useEffect } from "react";
 import { Filler } from "@/app/component/filler";
@@ -96,15 +95,19 @@ export default function Activity5() {
         
             <main className="a6-main">
                 <div className="a6-scroll-lock lg:flex-wrap lg:justify-center">
-                    {pokemons.map((pokemon) => (
-                        <div className={"pokemon-card "+ setCardColor(pokemon.types) } key={pokemon.name}>
+                    {pokemons.length && !loading ? 
+                        pokemons.map((pokemon) => (
+                            <div className={"pokemon-card "+ setCardColor(pokemon.types) } key={pokemon.name}>
 
-                            <img src={pokemon.image} alt={pokemon.name} className="pokemon-image" />
-                            <h2 className="text-2xl capitalize font-extrabold">{pokemon.name}</h2>
-  
-                            <p>{pokemon.description}</p>
-                        </div>
-                    ))}
+                                <img src={pokemon.image} alt={pokemon.name} className="pokemon-image" />
+                                <h2 className="text-2xl capitalize font-extrabold">{pokemon.name}</h2>
+                                <p>{pokemon.description}</p>
+                            </div>
+                    )) : loading ? (
+                        <p>Loading... {error}</p>
+                    ) : (
+                        <p>{error}</p>
+                    )}
                 </div>
             </main>
     
