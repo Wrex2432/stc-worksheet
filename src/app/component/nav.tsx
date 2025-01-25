@@ -10,7 +10,7 @@ export const Navigation = () => {
       <Link href="/activity/a4" className="nav-button button-style">A4</Link>
       <Link href="/activity/a5" className="nav-button button-style">A5</Link>
       <Link href="/activity/a6" className="nav-button button-style">A6</Link>
-      <Link href="/activity/a7" className="nav-button button-style">A7</Link>
+      <Link href="/" className="nav-button button-style">X</Link>
       <Link href="/activity/a8" className="nav-button button-style">A8</Link>
     </>
   );
