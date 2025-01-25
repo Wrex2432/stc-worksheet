@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import "./personal.css"
 import 'boxicons/css/boxicons.min.css';
-import "./temp.css"
-import "./temp2.css"
+import type { Metadata } from "next";
 import { Filler } from "./component/filler";
 
 export const metadata: Metadata = {
