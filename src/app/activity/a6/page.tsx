@@ -2,6 +2,9 @@
 import Link from "next/link";
 import "./a6.css";
 import { useState, useEffect } from "react";
+import { Filler } from "@/app/component/filler";
+import { Header } from "@/app/component/header";
+import { Footer } from "@/app/component/footer";
 
 interface FlavorTextEntry {
     language: {
@@ -14,6 +17,7 @@ type dataCard = {
     name:string,
     image:string,
     description:string,
+    types:string
 
 }
 
@@ -25,7 +29,7 @@ export default function Activity5() {
     useEffect(() => {
         const fetchPokemons = async () => {
         try {
-            const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=2");
+            const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
             const data = await response.json();
 
             const pokemonDetails = await Promise.all( data.results.map(async (pokemon: { name: string; url: string }) => {
@@ -44,6 +48,8 @@ export default function Activity5() {
                     name: pokemon.name,
                     image: imageUrl,
                     description: description,
+                    types: pokemonData.types[0].type.name,
+
                 };
             }));
                 setPokemons(pokemonDetails);
@@ -57,39 +63,52 @@ export default function Activity5() {
         fetchPokemons();
     }, []);
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    const setCardColor = (element:string) => {
+        switch(element){
+            case('bug'): return "before:bg-[#26de81]";
+            case('dragon'): return "before:bg-[#ffeaa7]";
+            case('electric'): return "before:bg-[#fed330]";
+            case('fairy'): return "before:bg-[#FF0069]";
+            case('fighting'): return "before:bg-[#30336b]";
+            case('fire'): return "before:bg-[#f0932b]";
+            case('flying'): return "before:bg-[#81ecec]";
+            case('grass'): return "before:bg-[#00b894]";
+            case('ground'): return "before:bg-[#EFB549]";
+            case('ghost'): return "before:bg-[#a55eea]";
+            case('ice'): return "before:bg-[#74b9ff]";
+            case('normal'): return "before:bg-[#95afc0]";
+            case('poison'): return "before:bg-[#6c5ce7]";
+            case('psychic'): return "before:bg-[#a29bfe]";
+            case('rock'): return "before:bg-[#2d3436]";
+            case('water'): return "before:bg-[#0190FF]";
+            default:
+                return"black";
+            break;
+        }
+    } 
 
-    if (error) {
-        return <div>{error}</div>;
-    }
     return (
         <>
-        <div className="filler"></div>
-        <div className="scroll-lock">
+        <Filler/>
+        <div className="scroll-lock a6-container">
             <div className="contain ">
-            
-            <header>
-                <h2 className="text-2xl font-bold">Miguel Mangahas | Activity 6</h2>
-            </header>
+            <Header/>
         
             <main className="a6-main">
-                {pokemons.map((pokemon) => (
-                    <div className="pokemon-card" key={pokemon.name}>
-                        <img src={pokemon.image} alt={pokemon.name} className="pokemon-image" />
-                        <h2>{pokemon.name}</h2>
-                        <p>{pokemon.description}</p>
-                    </div>
-                ))}
+                <div className="a6-scroll-lock lg:flex-wrap lg:justify-center">
+                    {pokemons.map((pokemon) => (
+                        <div className={"pokemon-card "+ setCardColor(pokemon.types) } key={pokemon.name}>
+
+                            <img src={pokemon.image} alt={pokemon.name} className="pokemon-image" />
+                            <h2 className="text-2xl capitalize font-extrabold">{pokemon.name}</h2>
+  
+                            <p>{pokemon.description}</p>
+                        </div>
+                    ))}
+                </div>
             </main>
     
-            <footer>
-                <Link href="/" className='a6-button button-style'>
-                    <i className='bx bx-home'></i>
-                </Link>
-            </footer>
-    
+            <Footer/>
             </div>
         </div>
         </>

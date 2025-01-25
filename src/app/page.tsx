@@ -1,26 +1,19 @@
 import {Navigation} from "./component/nav";
-
+import { Header } from "./component/header";
+import { Footer } from "./component/footer";
 export default function Home() {
   return (
     <>
-    <div className="filler"></div>
-    <div className="scroll-lock">
-      <div className="contain ">
-      
-        <header>
-          <h2 className="text-2xl font-bold">Miguel Mangahas | Technical Worksheet</h2>
-        </header>
-    
-        <main className="main-rootpage" >
-        <Navigation/>
-        </main>
-
-        <footer>
-          <p>foot</p>
-        </footer>
-
+      <div className="scroll-lock">
+        <div className="contain">
+          <Header/>
+          <main className="main-rootpage" >
+            <Navigation/>
+          </main>
+          <Footer/>
+        </div>
       </div>
-    </div>
+      
     </>
   );
 }

@@ -1,9 +1,12 @@
 "use client";
 import Link from "next/link";
 import "./a5.css";
-import { addTask, removeTask } from "./action";
+import { addTask} from "./component/action";
 import { useState, useEffect } from "react";
-
+import { Filler } from "@/app/component/filler";
+import { Header } from "@/app/component/header";
+import { Footer } from "@/app/component/footer";
+import { TaskCard } from "./component/taskCard";
 type Task = {
     id: number;
     task: string;
@@ -13,7 +16,7 @@ export default function Activity5() {
     const [tasks, setTasks] = useState<Task[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string>("");
-
+    
     useEffect(() => {
         async function fetchTasks() {
         try {
@@ -31,23 +34,17 @@ export default function Activity5() {
         }
         }
         fetchTasks();
-    }, []);
-
-    const handleLength = (text: string): string => {
-        return text.length >= 10 ? text.slice(0, 25).concat("...") : text.concat("...");
-    };
+    }, [tasks]);
 
     return (
         <>
-        <div className="filler"></div>
+        <Filler/>
         <div className="scroll-lock">
             <div className="contain">
-            <header>
-                <h2 className="text-2xl font-bold">Miguel Mangahas | Activity 5</h2>
-            </header>
-
+            <Header/>
             <main className="a5-main">
                 <h2 className="text-2xl">To-do List:</h2>
+                <p className="text-xs">This is using MockAPI.io to store the list.</p>
                 <form id="form-add" action={addTask}>
                 <input type="text" name="name" required />
                 <button type="submit" className="button-style">
@@ -57,16 +54,7 @@ export default function Activity5() {
                 <form id="form-list" action="">
                 {tasks.length && !loading ? (
                     tasks.map((taskData: Task) => (
-                    <div key={taskData.id}>
-                        <input type="checkbox" />
-                        <p>{handleLength(taskData.task)}</p>
-                        <button
-                        onClick={() => removeTask(taskData.id)}
-                        className="button-style"
-                        >
-                        <i className="bx bx-eraser"></i>
-                        </button>
-                    </div>
+                    <TaskCard key={taskData.id} taskData={taskData}/>
                     ))
                 ) : loading ? (
                     <p>Loading... {error}</p>
@@ -75,12 +63,7 @@ export default function Activity5() {
                 )}
                 </form>
             </main>
-
-            <footer>
-                <Link href="/" className="a5-button button-style">
-                <i className="bx bx-home"></i>
-                </Link>
-            </footer>
+            <Footer/>
             </div>
         </div>
         </>

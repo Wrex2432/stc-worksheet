@@ -3,6 +3,7 @@ import "./globals.css";
 import 'boxicons/css/boxicons.min.css';
 import "./temp.css"
 import "./temp2.css"
+import { Filler } from "./component/filler";
 
 export const metadata: Metadata = {
   title: "MIGUEL M. MANGAHAS | Junior Web Developer",
@@ -17,9 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-
-      {children}
-          
+        <Filler/>
+          {children}
       </body>
     </html>
   );

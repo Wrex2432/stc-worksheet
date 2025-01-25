@@ -4,6 +4,7 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
 .center-world {
@@ -21,12 +22,14 @@
     
 }
 
-span {
+
+.center-world span {
     display: block;
-    padding: 3em;
+    padding: 2em;
     font-size: 2rem;
     background-color: #FCFCFD;
     color: #222222;
+    white-space: nowrap;
 }
 
 i{

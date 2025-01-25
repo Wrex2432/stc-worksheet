@@ -1,7 +1,17 @@
 .a6-main{
     font-size: 1.3rem;
-    padding: 20px 4em 20px 4em;
-    height: 550px;
+    padding: 20px 1em 20px 1em;
+    height: 570px;
+    overflow: hidden;
+
+}
+.a6-scroll-lock{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    overflow: auto;
+
 }
 
 .a6-button{
@@ -10,3 +20,45 @@
 i{
     font-size: 3rem;
 }
+
+
+.pokemon-card {
+    position: relative;
+    border: 2px solid green;
+    height: 500px;
+    min-width: 330px;
+    max-width: 330px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: column;
+    padding: 2em 1em;
+    overflow: hidden;
+
+    
+}
+.pokemon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+
+
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    transform: scale(8) translateY(-5px);
+    /* background-color: #A4D541; */
+}
+
+.pokemon-card * {
+    z-index: 10;
+    /* border: 5px dashed rgb(83, 72, 180); */
+}
+
+.pokemon-card img {
+    --size: 12em;
+    width: var(--size);
+    height: var(--size);
+}
+

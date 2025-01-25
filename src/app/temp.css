@@ -78,3 +78,48 @@ footer {
 
 }
 
+@media only screen and (width<=1080px) {
+    header,main,footer{
+        padding-left: 2em;
+        width: 90vw;
+    }
+    .filler{
+        display: none;
+    }
+    .scroll-lock{
+        height: 100vh;
+    };
+
+}
+@media only screen and (width<=1080px) and (height<=1480px) {
+    .main-rootpage {
+        padding: 20px 4em 20px 4em;
+        height: 80vh;
+    
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        align-items: center;
+        justify-items: center;
+    }
+    
+
+}
+
+@media only screen and (width<=680px) {
+    .main-rootpage {
+        padding: 20px 0.5em 20px 0.5em;
+        height: 70vh;
+    
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: -10em;
+        align-items: center;
+        justify-items: center;
+    }
+
+}
+

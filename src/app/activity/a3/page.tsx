@@ -2,6 +2,9 @@
 import { useState } from "react";
 import "./a3.css";
 import Link from "next/link";
+import { Filler } from "@/app/component/filler";
+import { Header } from "@/app/component/header";
+import { Footer } from "@/app/component/footer";
 
 export default function Activity3() {
   const [value1, setValue1] = useState<string | number>("");
@@ -29,13 +32,10 @@ export default function Activity3() {
 
   return (
     <>
-      <div className="filler"></div>
+      <Filler/>
       <div className="scroll-lock">
         <div className="contain">
-          <header>
-            <h2 className="text-2xl font-bold">Miguel Mangahas | Activity 3</h2>
-          </header>
-
+          <Header/>
           <main className="a3-main">
             <form>
               <input
@@ -47,7 +47,7 @@ export default function Activity3() {
                 max={99}
                 placeholder="00"
               />
-              +
+              <i className='bx bx-plus'></i>
               <input
                 value={value2}
                 id="val2"
@@ -57,25 +57,21 @@ export default function Activity3() {
                 max={99}
                 placeholder="00"
               />
-              =
+              <i className='bx bxl-tailwind-css' ></i>
               <input
-                value={String(value1) + String(value2)}
+                value={(Number(value1) + Number(value2)) === 0 ? "" : (Number(value1) + Number(value2))}
                 id="result"
                 type="number"
                 placeholder="000"
                 readOnly
+                disabled
               />
             </form>
-          </main>
-
-          <footer>
-            <Link href="/" className="a3-button button-style">
-              <i className="bx bx-home"></i>
-            </Link>
             <button onClick={handleReset} className="button-style">
               <i className="bx bx-reset"></i>
             </button>
-          </footer>
+          </main>
+          <Footer/>
         </div>
       </div>
     </>

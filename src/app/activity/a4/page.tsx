@@ -25,11 +25,14 @@ export default function Activity4() {
         <div className="a4-container">
         <div className="a4-buttons">
             <Link href="/" className="button-style">
-            <i className="bx bx-home"></i>
+                <i className="bx bx-home"></i>
             </Link>
             <button onClick={handleReset} className="button-style">
-            <i className="bx bx-reset"></i>
+                <i className="bx bx-reset"></i>
             </button>
+            <Link href="https://github.com/Wrex2432/stc-worksheet/tree/main/src/app/activity/a4" target="_blank" className="button-style">
+                <i className='bx bxl-github'></i> 
+            </Link>
         </div>
         <button
             onClick={handleClick}

@@ -1,0 +1,73 @@
+.a8-main{
+    overflow-y: auto;
+    font-size: 1.3rem;
+    padding: 20px 4em 20px 4em;
+    height: 550px;
+}
+
+.a8-button{
+    width: 50px;
+}
+i{
+    font-size: 3rem;
+}
+
+#form-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 0.33em;
+}
+#form-add {
+    padding: 0.5em; 
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-columns: 1fr 100px;
+    gap: 18px;
+}
+
+#task-card {
+    align-items: center;
+    padding: 0.5em; 
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-columns: 60px 1fr 120px;
+    gap: 0.5rem;
+}
+
+#edit-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+#task-card input[type="checkbox"] {
+    justify-self: center;
+    width: clamp(48px,48px,2.5rem);
+    height: clamp(48px,48px,2.5rem);
+    cursor: pointer;
+}
+input[type="checkbox"]:focus + label {
+    text-decoration: underline;
+}
+
+input[type="text"] {
+    border: 2px solid #000;
+    width: 100%;
+
+    box-shadow: 
+        12px 12px 24px 0 rgba(0, 0, 0, 0.2),
+        -12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+    font-size: 1.5rem;
+    border-radius: 40px;
+    padding: 0.33rem 1em;
+    overflow: hidden;
+    display: flex;
+
+    box-shadow: 
+        inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2),
+        inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+}

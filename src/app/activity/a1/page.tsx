@@ -26,6 +26,9 @@ export default function Activity1() {
                         className='a1-button button-style'>
                             <i className='bx bx-target-lock'> </i>
                     </button>
+                    <Link href="https://github.com/Wrex2432/stc-worksheet/tree/main/src/app/activity/a1" target="_blank" className="button-style">
+                        <i className='bx bxl-github'></i> 
+                    </Link>
                 </div>
             </div>
         </div>

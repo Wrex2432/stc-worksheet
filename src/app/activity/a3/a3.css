@@ -15,7 +15,7 @@ input[type=number]{
         inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
 
 }
-input[type=number]:nth-child(3){
+input[type=number]:nth-child(5){
     width: 195px;
 }
 input[type=number]::-webkit-outer-spin-button,
